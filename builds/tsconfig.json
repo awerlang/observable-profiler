@@ -1,0 +1,14 @@
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+        "declaration": true,
+        "typeRoots": [],
+        "types": [],
+    },
+    "exclude": [
+        "../src/*.spec.ts",
+    ],
+    "files": [
+        "../src/index.ts",
+    ],
+}
