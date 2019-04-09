@@ -31,7 +31,8 @@
   },
   "scripts": {
     "test": "jest --watch",
-    "lint": "eslint ./**/*.ts",
+    "test:ci": "jest",
+    "lint": "eslint --ext .ts .",
     "build:cjs": "tsc -b builds/tsconfig.cjs.json",
     "build:esm5": "tsc -b builds/tsconfig.esm5.json",
     "build:esm2015": "tsc -b builds/tsconfig.esm2015.json",
