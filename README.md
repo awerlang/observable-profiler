@@ -1,5 +1,10 @@
 # observable-profiler
 
+[![npm](https://img.shields.io/npm/v/observable-profiler.svg)](https://www.npmjs.com/package/observable-profiler)
+[![GitHub](https://img.shields.io/github/license/awerlang/observable-profiler.svg)](https://opensource.org/licenses/MIT)
+[![Travis (.org)](https://img.shields.io/travis/awerlang/observable-profiler.svg)](https://travis-ci.org/awerlang/observable-profiler)
+[![Code Climate](https://codeclimate.com/github/awerlang/observable-profiler/badges/gpa.svg)](https://codeclimate.com/github/awerlang/observable-profiler)
+
 Tracks new & disposed Observable subscriptions.
 
 ## Usage
