@@ -43,7 +43,7 @@ platformBrowserDynamic([])
     .bootstrapModule(AppModule)
     .then(ref => {
         track();
-        window.stopProfiler = () => {
+        (window as any).stopProfiler = () => {
             ref.destroy();
             const subscribers = track(false);
             printSubscribers({
