@@ -96,7 +96,7 @@ function delay(ms: number) {
  * @param {boolean} rewriteStack `true` to remove some noise from stack traces
  * @param {RegExp} filterStackRe a custom Regexp object to filter stack frames
  * @param {boolean} reportInnerSubscriptions `true` to report indirect subscriptions
- * @param {Iterator} subscribers The result of a previous call to `tack(false)`
+ * @param {Iterator} subscribers The result of a previous call to `track(false)`
  */
 export async function printSubscribers({
     prefix = '',
