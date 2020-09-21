@@ -94,6 +94,32 @@ export class MainComponent {
 
     npm install observable-profiler
 
+## FAQ
+
+**1. Which recipe should I use?**
+
+A: If you're using a router, start with the router recipe, subscription tracking begins when the routed component is activated i.e. after its construction. The router recipe is intended to catch leaks as fast and localized as possible. Once you're done with router tests, use the bootstrap recipe, which would catch many more leaks, including work done outside router.
+
+**2. I'm seeing errors in the browser's console. Are they bugs in the `observable-profiler`?**
+
+A: The profiler will output a line `Current subscriptions (including indirect/nested): ...`, followed by a list of stack traces. Each stack trace points to a place where a subscription to an observable was made, but not yet released. The subscription might be released at a later point once it goes out of scope, but some of these are actual coding mistakes.
+
+**3. How can I make sense of the profiler's output?**
+
+A: The output is a stack trace, see question number 2. The last line in a stack trace likely is pointing to the source of the subscription. If that's on your own code, great, you should be able to fix it by releasing the subscription in the appropriate place and time. If it doesn't point to your own code, then it might be a problem for the third-party to solve. I suggest you report to them as a bug linking to a repro built with this tool.
+
+**4. There's no output, is that right?**
+
+A: If you're doing a great job, then that's right, there are no leaks. Or may be the case that no subscription was made during the period the profiler was working, as it can only catch subscriptions after tracking has begun.
+
+**5. Does the profiler works with libraries built on top of observables, like ngrx?**
+
+A: Yes. There's nothing special about them.
+
+**6. Any last advice?**
+
+A: In components, always subscribe in the `ngOnInit()` lifecycle event. Constructors are only meant for initializing fields in the component.
+
 ## License
 
 MIT
